@@ -1,0 +1,27 @@
+﻿{
+  "parameters": {
+    "onlySuedtirolInfoActive": false,
+    "onlyBookable": false,
+    "checkAvailabilityStatus": true,
+    "startDate": "2025-11-18",
+    "endDate": "2025-11-22",
+    "language": "de",
+    "paging": {
+      "pageNumber": 1,
+      "pageSize": 10000
+    },
+    "cacheLifeTimeInSeconds": 300,
+    "roomOptions": [
+      {
+        "id": 1,
+        "guests": 2,
+        "guestAges": [
+          18,
+          18
+        ]
+      }
+    ],
+    "mealPlanCodes": [ 1, 3, 10, 12, 14 ],
+    "accommodationRids": [ "62848EECA4F8606164D53A023F06E627" ]
+  }
+}

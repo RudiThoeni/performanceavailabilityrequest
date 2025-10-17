@@ -1,0 +1,64 @@
+﻿<AccommodationDataSearchRQ>
+	<POS>
+		<Source>
+			<RequestorID MessagePassword="secret">
+				<CompanyName>sinfo</CompanyName>
+			</RequestorID>
+		</Source>
+	</POS>
+	<Parameters>
+		<Result RID="" />
+		<Paging PageNumber="1" PageSize="10000" />
+		<Language Code="de" />
+		<ReturnFormat Request="0" Filters="0" RoomStayGenre="1" />
+		<Sorting Criterion="1" Order="" PromoteBookable="" />
+		<TimeSpan Start="2025-11-18" End="2025-11-22" CheckAvailabilityStatus="1" />
+		<AdvanceBookingRestriction OnlyBookableResults="0" />
+		<MealPlans>
+			<MealPlan MealPlanCodes="1" />
+			<MealPlan MealPlanCodes="3" />
+			<MealPlan MealPlanCodes="10" />
+			<MealPlan MealPlanCodes="12" />
+			<MealPlan MealPlanCodes="14" />
+		</MealPlans>
+		<Accommodations>
+			<Accommodation RID="DB54A35A094C4E404C74D62A0D066667" />
+			<Accommodation RID="95DD3173B41111D1BAAA00805A13E75D" />
+			<Accommodation RID="5BC795D0BDA84F1EA54EE9940D585ED0" />
+			<Accommodation RID="0AADBA8BC26811D1BAAA00805A13E75D" />
+			<Accommodation RID="B2D5F3A6CE2611D1BAAA00805A13E75D" />
+			<Accommodation RID="477593CCC94111D1BAAA00805A13E75D" />
+			<Accommodation RID="5C8558A1C00411D1BAAA00805A13E75D" />
+			<Accommodation RID="9DA57079C2FB11D1BAAA00805A13E75D" />
+			<Accommodation RID="FA312BAFBB4C11D2BAAB00805A13E75D" />
+			<Accommodation RID="47759366C94111D1BAAA00805A13E75D" />
+			<Accommodation RID="27570A59B50311D1BAAA00805A13E75D" />
+			<Accommodation RID="B2D5F385CE2611D1BAAA00805A13E75D" />
+			<Accommodation RID="DB1CC916AEB711D1BAAA00805A13E75D" />
+			<Accommodation RID="27570A44B50311D1BAAA00805A13E75D" />
+			<Accommodation RID="CABFEAFDC3BF11D1BAAA00805A13E75D" />
+			<Accommodation RID="DEEDEE2BBCC111D1BAAA00805A13E75D" />
+			<Accommodation RID="7DE4E84E0D66850AA3BE4562D8C45F6A" />
+			<Accommodation RID="AE6264CBBDB111D1BAAA00805A13E75D" />
+			<Accommodation RID="5DF21204ACF711D1BAAA00805A13E75D" />
+			<Accommodation RID="F339EF7AD3C416BAB7E9AEEFB5677B9D" />
+			<Accommodation RID="1502DC6FAC5D11D1BAAA00805A13E75D" />
+			<Accommodation RID="4F72A66BAE9C11D1BAAA00805A13E75D" />
+			<Accommodation RID="5DF211FDACF711D1BAAA00805A13E75D" />
+			<Accommodation RID="8EB3594B45F2CA729F1235E1728E1BE9" />
+			<Accommodation RID="0AADBA96C26811D1BAAA00805A13E75D" />
+			<Accommodation RID="DB1CC909AEB711D1BAAA00805A13E75D" />
+			<Accommodation RID="E8FEA091B37211D1BAAA00805A13E75D" />
+			<Accommodation RID="38411095BF1D11D1BAAA00805A13E75D" />
+			<Accommodation RID="3841109CBF1D11D1BAAA00805A13E75D" />
+			<Accommodation RID="B2D5F382CE2611D1BAAA00805A13E75D" />
+			<Accommodation RID="B2D5F37CCE2611D1BAAA00805A13E75D" />
+			<Accommodation RID="302F8C182B50CE4EE720480EA9CEAAEB" />
+			<Accommodation RID="1502DC77AC5D11D1BAAA00805A13E75D" />
+		</Accommodations>
+		<RoomStay Index="1" Guests="2">
+			<Guest Age="18" />
+			<Guest Age="18" />
+		</RoomStay>
+	</Parameters>
+</AccommodationDataSearchRQ>

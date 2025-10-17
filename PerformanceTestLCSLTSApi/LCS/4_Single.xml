@@ -1,0 +1,32 @@
+﻿<AccommodationDataSearchRQ>
+	<POS>
+		<Source>
+			<RequestorID MessagePassword="secret">
+				<CompanyName>sinfo</CompanyName>
+			</RequestorID>
+		</Source>
+	</POS>
+	<Parameters>
+		<Result RID="" />
+		<Paging PageNumber="1" PageSize="10000" />
+		<Language Code="de" />
+		<ReturnFormat Request="0" Filters="0" RoomStayGenre="1" />
+		<Sorting Criterion="1" Order="" PromoteBookable="" />
+		<TimeSpan Start="2025-11-18" End="2025-11-22" CheckAvailabilityStatus="1" />
+		<AdvanceBookingRestriction OnlyBookableResults="0" />
+		<MealPlans>
+			<MealPlan MealPlanCodes="1" />
+			<MealPlan MealPlanCodes="3" />
+			<MealPlan MealPlanCodes="10" />
+			<MealPlan MealPlanCodes="12" />
+			<MealPlan MealPlanCodes="14" />
+		</MealPlans>
+		<Accommodations>
+			<Accommodation RID="62848EECA4F8606164D53A023F06E627" />
+		</Accommodations>
+		<RoomStay Index="1" Guests="2">
+			<Guest Age="18" />
+			<Guest Age="18" />
+		</RoomStay>
+	</Parameters>
+</AccommodationDataSearchRQ>
