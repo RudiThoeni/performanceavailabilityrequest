@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace PerformanceTestLCSLTSApi
 {
@@ -19,7 +20,7 @@ namespace PerformanceTestLCSLTSApi
             this.ltsCredentials = new LTSCredentials(ltsapi.GetValue<string>("serviceurl", ""), ltsapi.GetValue<string>("username", ""), ltsapi.GetValue<string>("password", ""), ltsapi.GetValue<string>("xltsclientid", ""));
 
             var lcs = this.configuration.GetSection("LcsConfig");
-            this.lcsCredentials = new LTSCredentials(lcs.GetValue<string>("serviceurl", ""), lcs.GetValue<string>("username", ""), lcs.GetValue<string>("password", ""), lcs.GetValue<string>("messagepassword", ""));
+            this.lcsCredentials = new LCSCredentials(lcs.GetValue<string>("serviceurl", ""), lcs.GetValue<string>("username", ""), lcs.GetValue<string>("password", ""), lcs.GetValue<string>("messagepassword", ""));
         }
 
         public LTSCredentials LtsCredentials => this.ltsCredentials;
