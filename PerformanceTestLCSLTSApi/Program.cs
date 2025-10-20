@@ -5,11 +5,20 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())            
+            .AddUserSecrets<Program>();
+        
+        IConfiguration config = builder.Build();
+
+        Settings settings = new Settings(config);
+
+
         var processor = new XmlRequestProcessor(
-            apiUrl: "https://lcs.lts.it/api/data.svc/xml/AccommodationDataSearch",
-            username: "secret",
-            password: "secret",
-            messagePassword: "secret",
+            apiUrl: settings.LcsCredentials.serviceurl + "/xml/AccommodationDataSearch",
+            username: settings.LcsCredentials.username,
+            password: settings.LcsCredentials.password,
+            messagePassword: settings.LcsCredentials.messagepassword,
             newStartDate: "2025-12-01",  // Optional: set to null to keep original
             newEndDate: "2025-12-05"     // Optional: set to null to keep original
         );
@@ -21,10 +30,10 @@ class Program
 
 
         using (var jprocessor = new JsonRequestProcessor(
-            apiUrl: "https://api.example.com/search",
-            username: "secret",
-            password: "secret",
-            clientId: "secret",
+            apiUrl: settings.LtsCredentials.serviceurl + "/accommodations/availabilities/search",
+            username: settings.LtsCredentials.username,
+            password: settings.LtsCredentials.password,
+            clientId: settings.LtsCredentials.ltsclientid,
             newStartDate: "2025-12-01",  // Optional: set to null to keep original
             newEndDate: "2025-12-05"     // Optional: set to null to keep original
         ))
