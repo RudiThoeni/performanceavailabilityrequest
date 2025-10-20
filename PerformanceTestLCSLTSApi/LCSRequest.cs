@@ -43,16 +43,14 @@ namespace PerformanceTestLCSLTSApi
 
             if (!Directory.Exists(directoryPath))
             {
-                Console.WriteLine($"Directory not found: {directoryPath}");
-                return null;
+                Console.WriteLine($"Directory not found: {directoryPath}");                
             }
 
             var xmlFiles = Directory.GetFiles(directoryPath, "*.xml");
 
             if (xmlFiles.Length == 0)
             {
-                Console.WriteLine("No XML files found in the directory.");
-                return null;
+                Console.WriteLine("No XML files found in the directory.");                
             }
 
             Console.WriteLine($"Found {xmlFiles.Length} XML file(s) to process.\n");
@@ -63,7 +61,7 @@ namespace PerformanceTestLCSLTSApi
                 resultlist.Add(result);
             }
 
-
+            return resultlist;
         }
 
         private async Task<Tuple<int, long>?> ProcessSingleFileAsync(string filePath)
@@ -128,6 +126,8 @@ namespace PerformanceTestLCSLTSApi
                     {
                         var resultsQty = result.Attribute("ResultsQty")?.Value;
                         Console.WriteLine($"  ResultsQty: {resultsQty}");
+
+                        return Tuple.Create(int.Parse(resultsQty), stopwatch.ElapsedMilliseconds);
                     }
                     else
                     {
@@ -136,11 +136,15 @@ namespace PerformanceTestLCSLTSApi
                 }
 
                 Console.WriteLine();
+
+                return null;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"  Error processing file: {ex.Message}");
                 Console.WriteLine();
+
+                return null;
             }
         }
 

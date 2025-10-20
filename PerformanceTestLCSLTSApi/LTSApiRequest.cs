@@ -53,12 +53,14 @@ namespace PerformanceTestLCSLTSApi
             _httpClient.DefaultRequestHeaders.Add("X-LTS-ClientID", _clientId);
         }
 
-        public async Task ProcessJsonFilesAsync(string directoryPath)
+        public async Task<List<Tuple<int, long>?>?> ProcessJsonFilesAsync(string directoryPath)
         {
+            List<Tuple<int, long>> resultlist = new List<Tuple<int, long>>();
+
             if (!Directory.Exists(directoryPath))
             {
                 Console.WriteLine($"Directory not found: {directoryPath}");
-                return;
+                return null;
             }
 
             var jsonFiles = Directory.GetFiles(directoryPath, "*.json");
@@ -66,21 +68,25 @@ namespace PerformanceTestLCSLTSApi
             if (jsonFiles.Length == 0)
             {
                 Console.WriteLine("No JSON files found in the directory.");
-                return;
+                return null;
             }
 
             Console.WriteLine($"Found {jsonFiles.Length} JSON file(s) to process.\n");
 
             foreach (var filePath in jsonFiles)
             {
-                await ProcessSingleFileAsync(filePath);
+                resultlist.Add(await ProcessSingleFileAsync(filePath));
             }
+
+            return resultlist;
         }
 
         private async Task<Tuple<int, long>?> ProcessSingleFileAsync(string filePath)
         {
             try
-            {                
+            {
+                Tuple<int, long>? resulttuple = null;
+
                 Console.WriteLine($"Processing file: {Path.GetFileName(filePath)}");
 
                 // Load JSON
@@ -132,6 +138,8 @@ namespace PerformanceTestLCSLTSApi
 
                     return Tuple.Create(0, stopwatch.ElapsedMilliseconds);
                 }
+
+                return resulttuple;
             }
             catch (Exception ex)
             {
