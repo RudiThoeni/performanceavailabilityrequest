@@ -73,8 +73,8 @@ class Program
 
             for (int j = 0; j < 5; j++)
             {
-                Console.Write("Round {0}/{1} - ", i, j);
-                Console.WriteLine("LCS {0} / {1} : LTS {2} / {3}", lcsresultround[j].Item2, lcsresultround[j].Item1, ltsresultround[j].Item2, ltsresultround[j].Item1);
+                Console.Write("Round; {0}/{1} ; ", i, j);
+                Console.WriteLine("LCS; {0} ; {1} ; LTS ; {2} ; {3}", lcsresultround[j].Item2, lcsresultround[j].Item1, ltsresultround[j].Item2, ltsresultround[j].Item1);
             }
         }
 
